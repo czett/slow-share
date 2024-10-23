@@ -184,6 +184,13 @@ h2.title{
     text-align: center;
 }
 
+.img{
+    width: 5vh;
+    position: absolute;
+    inset: 2vh auto auto 2vh;
+    cursor: pointer;
+}
+
 @media (width < 1400px){    
     .input-wrapper{
         width: 50%;
