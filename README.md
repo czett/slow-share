@@ -1,3 +1,5 @@
+![where is my icon?](https://github.com/czett/slow-share/blob/main/static/favicon.png)
+
 # Slow-Share
 
 **Slow-Share** ist eine einfache, lokale Datei-Sharing-Web-App, die das Hochladen und Anzeigen von Dateien ermöglicht. Die App unterstützt verschiedene Dateiformate (PDF, Bilder, Videos, Audio, Dokumente) und zeigt die hochgeladenen Dateien in einer scrollbar horizontalen Leiste an.
