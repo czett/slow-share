@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_file
 import os
 
 app = Flask(__name__)
@@ -30,6 +30,15 @@ def upload_file():
         return redirect("/")
     
     return "Fehler beim Hochladen der Datei!"
+
+@app.route("/delete/<file>")
+def delete(file):
+    os.remove(f"files/{file}")
+    return redirect("/")
+
+@app.route("/download/<file>")
+def download(file):
+    return send_file(f"files/{file}", as_attachment=True)
 
 def list_files_in_folder(folder):
     try:

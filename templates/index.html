@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slow-Share</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=description" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="frame">
+        <h2 class="title">slow-share</h2>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <div class="input-wrapper">
                 <label for="file">
@@ -23,9 +24,27 @@
                 <div class="file">
                     <div class="filetype">{{file.split(".")[-1]}}</div>
                     <div class="filename">{{file}}</div>
+                    <div class="controls">
+                        <div class="download">
+                            <a href="/download/{{file}}"><span class="material-symbols-outlined icon">download</span></a>
+                        </div>
+                        <div class="delete">
+                            <a href="/delete/{{file}}"><span class="material-symbols-outlined icon">delete</span></a>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
     </div>
 </body>
 </html>
+
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+</style>

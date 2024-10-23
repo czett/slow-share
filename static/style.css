@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Russo+One&display=swap');
 
 :root{
     --ac: #FFA400;
@@ -6,9 +7,14 @@
     --fg: #EAF6FF;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 body, html{
     margin: 0;
     width: 100vw;
+    overflow-x: hidden;
     background-color: var(--bg);
 }
 
@@ -31,7 +37,7 @@ body, html{
     border-radius: 2rem;
     border-style: dashed;
     position: absolute;
-    inset: 25% auto auto 50%;
+    inset: 28% auto auto 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
     box-sizing: border-box;
@@ -89,6 +95,8 @@ body, html{
     white-space: nowrap;
     overflow-x: auto;
     gap: 1vh;
+    box-sizing: border-box;
+    padding: 0 2vh;
 }
 
 .files .file {
@@ -100,7 +108,10 @@ body, html{
     box-sizing: border-box;
     padding: 1vh;
     scrollbar-width: thin;
+    cursor: pointer;
     scrollbar-color: transparent;
+    position: relative;
+    overflow: hidden;
 }
 
 .files::-webkit-scrollbar {
@@ -118,4 +129,125 @@ body, html{
 
 .files::-webkit-scrollbar-thumb:hover {
     background-color: var(--ac);
+}
+
+.files .file .filetype{
+    font-family: 'Oxanium';
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.files .file .filename{
+    font-family: 'Oxanium';
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+    text-wrap: wrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
+}
+
+.files .file .controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: centery;
+    position: absolute;
+    inset: auto auto 0% 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.files .file .controls span.icon{
+    font-size: 1.75rem;
+    transition: 200ms;
+}
+
+.files .file .controls span.icon:hover{
+    color: var(--bg);
+}
+
+h2.title{
+    font-size: 4rem;
+    position: absolute;
+    inset: auto auto auto 50%;
+    transform: translateX(-50%);
+    line-height: 100%;
+    user-select: none;
+    text-align: center;
+}
+
+@media (width < 1400px){    
+    .input-wrapper{
+        width: 50%;
+        border-radius: 1rem;
+    }
+
+    .input-wrapper .icon{
+        font-size: 5rem;
+    }
+
+    .input-wrapper .icon:hover{
+        filter: brightness(1.1);
+        cursor: pointer;
+    }
+
+    .btn{
+        width: 50%;
+        aspect-ratio: 4/1;
+        inset: 50% auto auto 50%;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .files .file{
+        width: 17.5vh;
+    }
+    
+    h2.title{
+        font-size: 3rem;
+        width: 100%;
+        inset: auto auto auto 50%;
+    }
+}
+
+@media (width < 900px){    
+    .input-wrapper{
+        width: 75%;
+        border-radius: 1rem;
+    }
+
+    .input-wrapper .icon{
+        font-size: 5rem;
+    }
+
+    .input-wrapper .icon:hover{
+        filter: brightness(1.1);
+        cursor: pointer;
+    }
+
+    .btn{
+        width: 75%;
+        aspect-ratio: 4/1;
+        inset: 50% auto auto 50%;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .files .file{
+        width: 20vh;
+    }
+    
+    h2.title{
+        font-size: 2.5rem;
+        width: 100%;
+        inset: auto auto auto 50%;
+    }
 }
