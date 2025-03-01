@@ -58,4 +58,4 @@ def list_files_in_folder(folder):
         return redirect("/message/dir_not_found")
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5400)
+    app.run(debug=True, port=5400, host="0.0.0.0")
